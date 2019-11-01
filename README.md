@@ -27,3 +27,7 @@ stroke-width: 10;
 x: 5;
 y: 5;
 ````
+
+### Learning Notes
+For lines, the coordinates can't be put into CSS
+SVGs are severed in a first come, first serve manner, you cant use z-index to depict which thing sound be layered where.

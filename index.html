@@ -5,28 +5,98 @@
 	<title>D3 Basics</title>
 	<style>
 
-		.svg-rect{
-			width: 500px;
-			height: 500px;
-			background: blue;
+		.container{
+			background: orange;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
 		}
 
+		.space{
+			flex: 1 1 auto;
+			margin: 10px;
+		}
+
+		.svg-size{
+			width: 500px;
+			height: 500px;
+		}
+
+
 		.svg-rect rect{
-			width: 100px;
-			height: 100px;
+			width: 200px;
+			height:200px;
 			fill: #F44336;
 			stroke: #8BC34A;
 			stroke-width: 10;
 			x: 5;
 			y: 5;
 		}
+
+		.svg-circ circle{
+			r: 100;
+			cx: 105;
+			cy: 105;
+			fill: #9C27B0;
+			stroke: #E91E63;
+			stroke-width: 10;
+		}
+
+		.svg-ell ellipse{
+			rx: 100;
+			ry: 100;
+			cx: 105;
+			cy: 5;
+			fill: #2196F3;
+			stroke: #000;
+			stroke-width: 10;;
+		}
+
+		.svg-line line{
+			stroke: red;
+			stroke-width: 10;
+		}
+
 	</style>
 </head>
 <body>
 
-	<svg class='svg-rect'>
-		<rect></rect>
-	</svg>
+	<div class="container">
+		<div class="space">
+			<svg class='svg-size svg-rect'>
+				<rect></rect>
+			</svg>
+		</div>
+	
+		<div class="space">
+			<svg class='svg-size svg-circ'>
+				<circle></circle>
+			</svg>
+		</div>
+
+		<div class="space">
+			<svg class='svg-size svg-ell'>
+				<ellipse></ellipse>
+			</svg>
+		</div>
+
+		<div class="space">
+			<svg class='svg-size svg-line'>
+				<line x1='25' y1='25' x2='200' y2='200'></line>
+			</svg>
+		</div>
+
+		<div class="space">
+			<svg class='svg-size svg-circ'>
+				<circle></circle>
+				<line x1='25' y1='25' x2='200' y2='200' stroke='#000' stroke-width=10></line>
+			</svg>
+		</div>
+
+	</div>
+
+	
 
 	<script src='app.js'></script>
 </body>
