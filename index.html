@@ -58,6 +58,18 @@
 			stroke-width: 10;
 		}
 
+		.svg-pol polygon{
+			stroke: #000;
+			fill: #607D8B;
+			stroke-width: 10;
+		}
+
+		.svg-pol polyline{
+			stroke: #000;
+			fill: none;
+			stroke-width: 10;
+		}
+
 	</style>
 </head>
 <body>
@@ -91,6 +103,19 @@
 			<svg class='svg-size svg-circ'>
 				<circle></circle>
 				<line x1='25' y1='25' x2='200' y2='200' stroke='#000' stroke-width=10></line>
+			</svg>
+		</div>
+
+		<div class="space">
+			<svg class='svg-size svg-pol'>
+				<polygon points='220,10 123,234, 300,210 170,250, '></polygon>
+			</svg>
+		</div>
+
+		<div class="space">
+			<svg class='svg-size svg-pol'>
+				<!-- does not allow fill -->
+				<polyline points='220,10 123,234, 300,210 170,250, '></polyline>
 			</svg>
 		</div>
 
