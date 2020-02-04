@@ -3,74 +3,7 @@
 <head>
     <meta charset="UTF-8">
 	<title>D3 Basics</title>
-	<style>
-
-		.container{
-			background: orange;
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: space-between;
-		}
-
-		.space{
-			flex: 1 1 auto;
-			margin: 10px;
-		}
-
-		.svg-size{
-			width: 500px;
-			height: 500px;
-		}
-
-
-		.svg-rect rect{
-			width: 200px;
-			height:200px;
-			fill: #F44336;
-			stroke: #8BC34A;
-			stroke-width: 10;
-			x: 5;
-			y: 5;
-		}
-
-		.svg-circ circle{
-			r: 100;
-			cx: 105;
-			cy: 105;
-			fill: #9C27B0;
-			stroke: #E91E63;
-			stroke-width: 10;
-		}
-
-		.svg-ell ellipse{
-			rx: 100;
-			ry: 100;
-			cx: 105;
-			cy: 5;
-			fill: #2196F3;
-			stroke: #000;
-			stroke-width: 10;;
-		}
-
-		.svg-line line{
-			stroke: red;
-			stroke-width: 10;
-		}
-
-		.svg-pol polygon{
-			stroke: #000;
-			fill: #607D8B;
-			stroke-width: 10;
-		}
-
-		.svg-pol polyline{
-			stroke: #000;
-			fill: none;
-			stroke-width: 10;
-		}
-
-	</style>
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -116,6 +49,39 @@
 			<svg class='svg-size svg-pol'>
 				<!-- does not allow fill -->
 				<polyline points='220,10 123,234, 300,210 170,250, '></polyline>
+			</svg>
+		</div>
+
+		<!-- svg paths -->
+		<div class="space">
+			<svg class='svg-size svg-path'>
+				<path d='
+						M 100, 100 
+						L 300, 150 
+						L 300, 300
+						Z
+						M 150, 200
+						L 30, 30
+						L 10, 200
+						Z '
+					fill='none' stroke='#000' stroke-width='10'></path>
+			</svg>
+		</div>
+
+		<div class="space">
+			<svg class='svg-size svg-path'>
+				<path d='
+						M 100, 100 
+						L 300, 150 
+						L 300, 300
+						Q 200, 400 100, 200 '
+					fill='none' stroke='#000' stroke-width='10'></path>
+				<path d='
+					M 100, 100 
+					l 300, 150 
+					l 300, 300
+					q 200, 400 100, 200 '
+				fill='none' stroke='yellow' stroke-width='10'></path>
 			</svg>
 		</div>
 
