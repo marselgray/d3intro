@@ -112,6 +112,25 @@
 			</svg>
 		</div>
 
+		<!-- clip path-->
+		<div class="space">
+			<svg class='svg-size svg-clip'>
+				<defs>
+					<clipPath id='custom_clip_path'>
+						<rect x='250' y='250'
+							width='200' height='200'></rect>
+					</clipPath>
+				</defs>
+
+				<circle cx='250' cy='250'
+					r='200' fill='blue'
+					clip-path='url(#custom_clip_path)'>
+
+				</circle>
+
+			</svg>
+		</div>
+
 	</div>
 
 	
