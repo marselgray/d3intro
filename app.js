@@ -5,14 +5,30 @@ var el = d3.select('body')
 	.data(dataset)
 	.enter()
 	.append('p')
-	.text('hello world');
+	.text(function(d){
+		return `this paragraph is binded to the number ` + d;
+	})
 
 	// .append('p')
 	/* these are consider 
 	transformation methods */
-	// .attr('class', 'foo')
+	.attr('class', function(d){
+		if ( d > 25){
+			return 'foo';
+		} else{
+			return null;
+		}
+	})
 	// .text('Hello world')
-	// .classed('foobar', true)
-	// .style('color', 'blue');
+	.classed('bar', function(d){
+		return d < 25; // 10 < 25 === true
+	})
+	.style('color', function(d){
+		if ( d > 25){
+			return 'red';
+		} else{
+			return 'blue';
+		}
+	});
 
 console.log(el);
