@@ -1,3 +1,8 @@
+d3.csv('data.csv').then(function(data){
+	console.log(data);
+});
+
+
 var dataset = [10, 20, 30, 40, 50];
 
 var el = d3.select('body')
