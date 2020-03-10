@@ -1,22 +1,51 @@
 var data = [];
 
-for(let i = 0; i < 25; i++){
+for(let i = 0; i < 20; i++){
 	// let num = Math.floor( Math.random() * 50 );
-	let num = d3.randomUniform(1, 50);
+	let num = Math.floor(d3.randomUniform(1, 50)());
 	data.push(num);
 }
+// create svg element
+var chartWidth = 800;
+var chartHeight = 400;
+var barPadding = 5;
 
-console.log(data);
+var svg = d3.select('#chart')
+			.append('svg')
+			.attr('width', chartWidth)
+			.attr('height', chartHeight);
 
-
-
-d3.select('#chart')
-	.selectAll('div')
+// bind data and create bars
+svg.selectAll('rect')
 	.data(data)
 	.enter()
-	.append('div')
-	.attr('class', 'bar')
-	.style('height', function(d){
-		let height = d * 3;
-		return height + `px`;
-	});
+	.append('rect')
+	.attr('x', function(d, i){
+		return i * (chartWidth / data.length);
+	})
+	.attr('y', function(d){
+		return chartHeight - (d * 5);
+	})
+	.attr('width', (chartWidth / data.length - barPadding))
+	.attr('height', function(d){
+		return (d * 5);
+	})
+	.attr('fill', '#7ED26D');
+
+
+// create labels
+svg.selectAll('text')
+	.data(data)
+	.enter()
+	.append('text')
+	.text(function(d){
+		return d;
+	})
+	.attr('x', function(d, i){
+		return i * (chartWidth / data.length);
+	})
+	.attr('y', function(d){
+		return chartHeight - (d * 5) + 15;
+	})
+	.attr('font-size', 14)
+	.attr('fill', '#fff');
