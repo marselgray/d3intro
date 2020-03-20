@@ -1,6 +1,6 @@
 var data = [];
 
-for(let i = 0; i < 20; i++){
+for(let i = 0; i < 15; i++){
 	// let num = Math.floor( Math.random() * 50 );
 	let num = Math.floor(d3.randomUniform(1, 50)());
 	data.push(num);
@@ -42,10 +42,11 @@ svg.selectAll('text')
 		return d;
 	})
 	.attr('x', function(d, i){
-		return i * (chartWidth / data.length);
+		return i * (chartWidth / data.length) + (chartWidth / data.length - barPadding) / 2;
 	})
 	.attr('y', function(d){
 		return chartHeight - (d * 5) + 15;
 	})
 	.attr('font-size', 14)
-	.attr('fill', '#fff');
+	.attr('fill', '#fff')
+	.attr('text-anchor', 'middle');
