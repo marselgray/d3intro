@@ -152,3 +152,49 @@ CSV files are comma separated values. Each line is considered a row. Each comma 
 D3 takes the time to convert CSV data into objects and arrays depending on how it’s formatted.
 
 JSON files hardly get affected as they’re objects and arrays to begin with. It’s preferable to use JSON code rather than CSV for consistency.
+
+### Starting with Scales
+
+D3 can be used to create any type of visualization. It’s not biased towards nay chart or graph.
+
+Adobe color is a tool that allows you to find great color combinations and even build your own.
+
+You can use the data to change the outcome of the bar/chart. Most commonly used to manipulate the height or height.
+
+### Random Data
+
+Generating Random data can help battle test your graph as it allows you to cover more scenarios.
+
+There are situations where clients may not be able to provide you data so you’ll be responsible for generating dummy data in the mean time.
+
+The D3 random library takes care of generating random data for you.
+
+### Using SVG
+
+Moving SVG elements requires that you change their x and y coordinates. The X coordinate goes from left to right and the y coordinate goes from top to bottom.
+
+If you’re reusing values, then you should store it in a variable. This makes it easy to change later on if you ever need to.
+
+Labels are a way to identify a shape. Users will be able to better understand compare your visualization if you provide labels.
+
+Text anchoring is special to SVG. You can determine whether text gets pushed form its side or center point.
+
+### Scatter Plot
+
+Scatter plots allow you to chart large amounts of data. They are circles that represent 2 pieces of data. They can also vary in size to show more impact over others.
+
+Creating a scatter plot is similar to creating a bar graph. You create the elements, bind the data, create more elements for the data and add details.
+
+You can use the join() function to combine arrays to strings. This can be useful for displaying coordinates stored in arrays.
+
+Math is used to position and set the size of elements. D3 can take care of the more complex operations so you don’t have to.
+
+### Scales
+
+Scales are functions that take your data and will lower or increase the values so that they can be used for visualization.
+
+The input domain is the original set of data. It’s the highest and lowest numbers in your data.
+
+The output range is the numbers that the original data should be scaled to. These would usually be size of the viewing area.
+
+The D3 array library is a utility library that provides functions for working with arrays no matter how complex. It’s included in the core by default so you don’t need to do anything to set it up.
