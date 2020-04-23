@@ -198,3 +198,13 @@ The input domain is the original set of data. It’s the highest and lowest numb
 The output range is the numbers that the original data should be scaled to. These would usually be size of the viewing area.
 
 The D3 array library is a utility library that provides functions for working with arrays no matter how complex. It’s included in the core by default so you don’t need to do anything to set it up.
+
+### Applying Scales to Visualizations
+
+The d3.max() and d3.min() functions can be passed in accessor functions for complex array and object structures.
+
+An accessor function is a function that returns a value that’s used for grabbing certain data from an object or array.
+
+Adding padding to your visualizations is common so that shapes and text don’t get cut off from the viewing area.
+
+You can reverse the range and D3 will take care of scaling the values appropriately for you.
