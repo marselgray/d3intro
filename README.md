@@ -208,3 +208,11 @@ An accessor function is a function that returns a value that’s used for grabbi
 Adding padding to your visualizations is common so that shapes and text don’t get cut off from the viewing area.
 
 You can reverse the range and D3 will take care of scaling the values appropriately for you.
+
+### Exploring More Scales
+
+D3 provides various scales for various scenarios. An official list of scales can be found on the D3 Scales library.
+
+Each scale can be used for scaling different types of shapes such as the scaleSqrt() function for circles.
+
+Some scales are used for data that don’t contain numeric values such as colors or categorical data.

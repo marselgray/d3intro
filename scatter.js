@@ -9,9 +9,11 @@ var data = [
 	[ 90, 220 ]
 ];
 
+
 var chart_width  = 800;
 var chart_height = 400;
 var padding = 50;
+
 
 // create SVG Element
 var svg = d3.select('#chart')
@@ -39,6 +41,13 @@ var r_scale = d3.scaleLinear()
 	})])
 	.range([5, 30]);
 
+var a_scale = d3.scaleSqrt()
+	.domain([0, d3.max(data, function(d){
+		return d[1]
+	})])
+	.range([0, 25]);
+
+
 // create circles
 svg.selectAll('circle')
 	.data(data)
@@ -51,7 +60,7 @@ svg.selectAll('circle')
 		return y_scale( d[1] )
 	})
 	.attr('r', function(d){
-		return d[1] / 10
+		return a_scale( d[1] )
 	})
 	.attr('fill', '#D1AB0E');
 
