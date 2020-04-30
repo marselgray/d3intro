@@ -216,3 +216,13 @@ D3 provides various scales for various scenarios. An official list of scales can
 Each scale can be used for scaling different types of shapes such as the scaleSqrt() function for circles.
 
 Some scales are used for data that don’t contain numeric values such as colors or categorical data.
+
+### Time Scales
+
+Dates in your data will most likely come in a format that neither D3 or JavaScript can understand. D3 only works with Date Objects.
+
+There are a set of functions that will take care of reading your formatted dates and converting them into date objects to use with scales and vice versa.
+
+MomentJS is also a popular library for converting dates. You can use this if you’re comfortable with it.
+
+D3’s time scale will read your dates and convert them into numbers that can be used to visualize your data.
