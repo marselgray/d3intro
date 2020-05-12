@@ -236,3 +236,11 @@ The axisTop() and axisBottom() functions are used for creating a horizontal axis
 Unlike scales, these functions will draw the SVG elements for you. It’s good practice to store these generated elements inside a group so they can be moved and managed easily.
 
 You can use CSS to refine the outcome of your SVG shapes. The more cleaner a shape looks, the more resources is required to render it. 
+
+### Refining the Axis and adding the Y Axis
+
+The ticks() function allows you to set a number of ticks an axis should have. The number will only be taken as a suggestion.
+
+The tickValues() function will allow you to completely control how many ticks are outputted along with the actual values themselves. D3 will take the time to space them out.
+
+The tickFormat() function will allow you to format the text that gets outputted for each tick. You are provided the data for each tick so you can manipulate it appropriately. 
