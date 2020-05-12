@@ -226,3 +226,13 @@ There are a set of functions that will take care of reading your formatted dates
 MomentJS is also a popular library for converting dates. You can use this if you’re comfortable with it.
 
 D3’s time scale will read your dates and convert them into numbers that can be used to visualize your data.
+
+### Adding an Axis
+
+An axis is a line with ticks that provide a way to visually measure the distance between certain points in a graph. D3 provides a set of functions for creating an axis.
+
+The axisTop() and axisBottom() functions are used for creating a horizontal axis. The axisLeft() and axisRight() functions are used for creating a vertical axis.
+
+Unlike scales, these functions will draw the SVG elements for you. It’s good practice to store these generated elements inside a group so they can be moved and managed easily.
+
+You can use CSS to refine the outcome of your SVG shapes. The more cleaner a shape looks, the more resources is required to render it. 

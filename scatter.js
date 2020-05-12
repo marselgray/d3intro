@@ -76,6 +76,13 @@ var a_scale = d3.scaleSqrt()
 	.range([0, 25]);
 
 
+// create axis
+var x_axis = d3.axisBottom(x_scale);
+svg.append('g')
+	.call(x_axis)
+	.attr('class', 'x-axis')
+	.attr('transform', 'translate(0,' + (chart_height - padding) + ')');
+
 // create circles
 svg.selectAll('circle')
 	.data(data)
