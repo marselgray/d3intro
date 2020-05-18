@@ -244,3 +244,13 @@ The ticks() function allows you to set a number of ticks an axis should have. Th
 The tickValues() function will allow you to completely control how many ticks are outputted along with the actual values themselves. D3 will take the time to space them out.
 
 The tickFormat() function will allow you to format the text that gets outputted for each tick. You are provided the data for each tick so you can manipulate it appropriately. 
+
+### Ordinal Scales
+
+Ordinal scales are used to convert categorical data into numbers that can be used for your visualizations.
+
+The definition of ordinal is relating to a “thing’s” position in a series.
+
+D3 will evenly distribute your ordinal data. It’s important to note that it will apply padding at the end.
+
+A band is a specific set of numbers in a range. The set of numbers are usually distributed evenly in a pattern. Not always, but that’s usually the case.
