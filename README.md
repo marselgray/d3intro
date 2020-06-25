@@ -254,3 +254,21 @@ The definition of ordinal is relating to a “thing’s” position in a series.
 D3 will evenly distribute your ordinal data. It’s important to note that it will apply padding at the end.
 
 A band is a specific set of numbers in a range. The set of numbers are usually distributed evenly in a pattern. Not always, but that’s usually the case.
+
+### Refining the Bar Graph
+
+You can use numeric data as ordinal data if you wish. Instead of using the numbers themselves, you can use their index.
+
+The band width is the distance between number in the band range. D3 provides a function called bandwidth() which will calculate this for you without the padding.
+
+Band scales were made specifically for bar charts so it’s recommend you use them.
+
+### Updating the Bar Graph
+
+There are 3 situations you’ll find yourself in when it comes to updating data. This can be a change in your original date, an addition or a removal.
+
+Changes in data usually occur during an event. By default, D3 supports all JavaScript events by using the on() function on a selection.
+
+The reverse() function is a JavaScript array function that will take care of reversing the values in your array.
+
+You can bind your data to the elements again to let D3 be aware of the change. You will have to redraw only the elements affected and only change the attributes that were affected.
