@@ -1,5 +1,6 @@
 var data = [6,20,21,14,2,30,7,16,25,5,11,28,10,26,9];
 
+
 // Create SVG Element
 var chart_width     =   800;
 var chart_height    =   400;
@@ -8,7 +9,8 @@ var svg             =   d3.select( '#chart' )
 	.append( 'svg' )
 	.attr( 'width', chart_width )
 	.attr( 'height', chart_height );
-	
+
+
 // create scales
 // numbers retuned based on chart
 // 800 / numbers in the array (15)
@@ -20,6 +22,8 @@ var x_scale = d3.scaleBand()
 var y_scale = d3.scaleLinear()
 	.domain([0, d3.max(data)])
 	.range([0, chart_height]);
+
+
 
 // Bind Data and create bars
 svg.selectAll( 'rect' )
@@ -37,6 +41,7 @@ svg.selectAll( 'rect' )
 		return y_scale(d)
 	})
 	.attr( 'fill', '#7ED26D' );
+
 
 // Create Labels
 svg.selectAll( 'text' )
@@ -63,6 +68,12 @@ d3.select('button').on('click', function(){
 
 	svg.selectAll('rect')
 		.data(data)
+		.transition()
+		.delay(function(d, i){
+			return i / data.length * 1000;
+		})
+		.duration(2000)
+		.ease(d3.easeElasticOut)
 		.attr( 'y', function(d ){
 			return chart_height - y_scale(d)
 		})
@@ -72,6 +83,12 @@ d3.select('button').on('click', function(){
 
 	svg.selectAll( 'text' )
 		.data(data)
+		.transition()
+		.delay(function(d, i){
+			return i / data.length * 1000;
+		})
+		.duration(2000)
+		.ease(d3.easeElasticOut)
 		.text(function( d ){
 			return d;
 		})
