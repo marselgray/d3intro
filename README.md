@@ -282,3 +282,7 @@ Transitions can only be applied to attributes that currently exist. Otherwise th
 You can control the duration of your transition by applying the duration() function. The length of time is measured in milliseconds.
 
 You can delay a transition by applying the delay() function. This is also measured in milliseconds. Be careful with your delays as it can be easy to ruin the user experience with long delays and animations.
+
+### Updating the Data
+
+If your data changes, then your visualization will not reflect that accurately. You’ll need to update the domain before you do anything else. Just call the domain() function again and pass in the new minimum and maximum values.
