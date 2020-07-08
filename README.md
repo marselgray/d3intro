@@ -286,3 +286,11 @@ You can delay a transition by applying the delay() function. This is also measur
 ### Updating the Data
 
 If your data changes, then your visualization will not reflect that accurately. You’ll need to update the domain before you do anything else. Just call the domain() function again and pass in the new minimum and maximum values.
+
+### Reinforcing Transitions and Animations
+
+The axis needs to be updated when your data changes drastically. If not, then the data can be inaccurately read.
+
+You do not need to pass in the scales again as D3 will be able to detect those changes for you and update the axis appropriately.
+
+You are allowed to animate the axis by chaining the transition(), delay(), and duration() functions.
