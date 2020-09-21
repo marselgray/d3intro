@@ -32,6 +32,16 @@ var y_scale         =   d3.scaleLinear()
     .range([ chart_height - padding, padding ]);
 
 
+// Clip Paths
+svg.append( 'clippath')
+	.attr('id', 'plot-area-clip-path')
+	.append('rect')
+	.attr('x', padding)
+	.attr('y', padding)
+	.attr('width', chart_width - padding * 3)
+	.attr('height', chart_height - padding * 2);
+
+
 // Create Axis
 var x_axis          =   d3.axisBottom( x_scale );
 
@@ -55,18 +65,21 @@ svg.append( 'g' )
     .call( y_axis );
 
 // Create Circles
-svg.selectAll( 'circle' )
-    .data( data )
-    .enter()
-    .append( 'circle' )
-    .attr("cx", function(d) {
-        return x_scale(d[0]);
-    })
-    .attr("cy", function(d) {
-        return y_scale(d[1]);
-    })
-    .attr("r", 15)
-    .attr( 'fill', '#D1AB0E' );
+svg.append('g')
+	.attr('id', 'plot-area')
+	.attr('clip-path', 'url(#plot-area-clip-path)')
+	.selectAll( 'circle' )
+	.data( data )
+	.enter()
+	.append( 'circle' )
+	.attr("cx", function(d) {
+		return x_scale(d[0]);
+	})
+	.attr("cy", function(d) {
+		return y_scale(d[1]);
+	})
+	.attr("r", 15)
+	.attr( 'fill', '#D1AB0E' );
 
 
 
@@ -93,17 +106,35 @@ d3.select('button').on('click', function(){
 		return d[1];
 	})]);
 
+	var colors = [
+		'#f26d6d', '#1e6190', '#7559d9', '#d1ab03'
+	];
+	var color_index = Math.floor(
+		Math.random() * colors.length
+	);
+
 
 	svg.selectAll('circle')
 		.data(data)
 		.transition()
 		.duration(1000)
+		// .on('start', function(){
+		// 	d3.select(this)
+		// 	.transition()
+		// 	.attr('fill', '#F26D2D');
+		// })
 		.attr("cx", function(d) {
 			return x_scale(d[0]);
 		})
 		.attr("cy", function(d) {
 			return y_scale(d[1]);
-		});
+		})
+		transition()
+		.attr('fill', colors[color_index]);
+		// .on('end', function(){
+		// 	d3.select(this)
+		// 	.attr('fill', colors[color_index]);
+		// });
 
 	// Update Axis
 	svg.select('.x-axis')

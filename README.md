@@ -294,3 +294,21 @@ The axis needs to be updated when your data changes drastically. If not, then th
 You do not need to pass in the scales again as D3 will be able to detect those changes for you and update the axis appropriately.
 
 You are allowed to animate the axis by chaining the transition(), delay(), and duration() functions.
+
+### Reinforcing Transitions and Animations
+
+The axis needs to be updated when your data changes drastically. If not, then the data can be inaccurately read.
+
+You do not need to pass in the scales again as D3 will be able to detect those changes for you and update the axis appropriately.
+
+You are allowed to animate the axis by chaining the transition(), delay(), and duration() functions.
+
+### Refining the Scatterplot
+
+Clip paths allow you to hide portions of a shape that appears outside of its viewing area.
+
+It’s more efficient to group your elements together and then apply a clipping path rather than applying clip paths to each element individually.
+
+Transitions have events called start and end. The start event is triggered when the transitioned begins. The end transition event is triggered when the transition ends. Each element will have their own transition events.
+
+You can have multiple transitions occurring on the page. However, you can’t have multiple transitions applied to the same element at the same time or else the previous transitions will be cancelled.
