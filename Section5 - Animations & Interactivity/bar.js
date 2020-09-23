@@ -63,7 +63,7 @@ svg.selectAll( 'text' )
 
 
 // Events
-d3.select('button').on('click', function(){
+d3.select('.update').on('click', function(){
 	// data.reverse();
 
 	data[0] = 50;
@@ -98,4 +98,46 @@ d3.select('button').on('click', function(){
 		.attr( 'y', function(d ){
 			return chart_height - y_scale(d) + 25;
 		})
+})
+
+
+
+// add data
+d3.select('.add').on('click', function(){
+	// add new data
+	var new_num = Math.floor(Math.random() * d3.max(data));
+	data.push(new_num);
+
+	// update scales
+	x_scale.domain(d3.range(data.length));
+	y_scale.domain([0, d3.max(data, function(d){
+		return d;
+	})]);
+
+	// select bars
+	var bars = svg.selectAll('rect').data(data);
+
+	// add new bar
+	bars.enter()
+		.append('rect')
+		.attr('x', function(d, i){
+			return x_scale(i)
+		})
+		.attr('y', chart_height)
+		.attr('width', x_scale.bandwidth())
+		.attr('height', 0)
+		.attr('fill', '#7ED26D')
+		.merge(bars)
+		.transition(1000)
+		.attr( 'x', function( d, i ){
+			return x_scale(i);
+		})
+		.attr( 'y', function(d ){
+			return chart_height - y_scale(d)
+		})
+		.attr( 'width', x_scale.bandwidth() )
+		.attr( 'height', function( d ){
+			return y_scale(d)
+		});
+
 })

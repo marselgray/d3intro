@@ -312,3 +312,13 @@ It’s more efficient to group your elements together and then apply a clipping 
 Transitions have events called start and end. The start event is triggered when the transitioned begins. The end transition event is triggered when the transition ends. Each element will have their own transition events.
 
 You can have multiple transitions occurring on the page. However, you can’t have multiple transitions applied to the same element at the same time or else the previous transitions will be cancelled.
+
+### Adding Data
+
+When you add new data, you need to update your scales domain for the new minimum and maximum values.
+
+The data() function returns a selection. The selection being the elements that have data binded to them.
+
+The elements that have data binded to them and the elements you create after moving them from the waiting room are 2 different selections.
+
+You can merge separate selections by calling the merge() function. This function must be chained after a selection and the selection it will be merged with must be passed into the function.
